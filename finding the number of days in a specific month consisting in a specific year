@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int year = sc.nextInt();
+        int month = sc.nextInt();
+        if(year<1900 || year>9999 ){
+            System.out.println(0);
+            return;
+        }
+        if (month<1 || month>12){
+            System.out.println(0);
+            return;
+        }
+        int days = 0;
+        switch(month){
+            case 1: //january
+            case 3: //March
+            case 5: //May
+            case 7: //july
+            case 8: //August
+            case 10: //October
+            case 12: //december
+             days = 31;
+             break;
+             case 2: //February
+             if((year % 400 == 0) || (year % 4 == 0 && year % 100!= 0)){
+                 days =29; //leap year
+             } else {
+                 days = 28;
+             }
+               break;  
+             }
+        System.out.println(days);
+    }
+}
