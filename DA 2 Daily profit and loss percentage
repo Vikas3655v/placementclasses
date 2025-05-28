@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Main{
+  public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    int cp=sc.nextInt();
+    int sp=sc.nextInt();
+
+    if(sp<0||cp<0){
+      System.out.println("Invalid Input");
+    }
+    else{
+      if(cp>sp){
+        int l=cp-sp;
+        double lp=((double)l/cp)*100.0;
+        System.out.println("Loss - "+(int)lp+"%");
+      }
+      else if(sp>cp){
+        int p=sp-cp;
+        double pp=((double)p/cp)*100.0;
+        System.out.println("Profit - "+(int)pp+"%");
+      }
+      else if(sp==cp){
+        System.out.println("No Profit, No Loss");
+      }
+    }
+    
+  }}
