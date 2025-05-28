@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class ProductQualityCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int productId = scanner.nextInt();
+
+        // Edge case: 1 is not a prime number
+        if (productId <= 1) {
+            System.out.println("Regular Product");
+            return;
+        }
+
+        boolean isPrime = true;
+
+        // Check for factors from 2 to sqrt(productId)
+        for (int i = 2; i <= Math.sqrt(productId); i++) {
+            if (productId % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime) {
+            System.out.println("Premium Product");
+        } else {
+            System.out.println("Regular Product");
+        }
+
+        scanner.close();
+    }
+}
