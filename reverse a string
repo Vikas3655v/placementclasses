@@ -1,0 +1,9 @@
+import  java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		String str = "Vikas";
+		StringBuilder reversed = new StringBuilder(str).reverse();
+		System.out.println(reversed);
+	}
+}
